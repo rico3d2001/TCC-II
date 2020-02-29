@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RicardoTCC.LV.Dominio.Entitades.ListaVerificacao" Collapsed="true">
+    <Position X="7" Y="6" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="CopiaVerificacao" Type="RicardoTCC.LV.Dominio.ObjetosValor.CopiaVerificacao" FixedToPoint="true">
+      <Path>
+        <Point X="7.75" Y="6.562" />
+        <Point X="7.75" Y="7.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAgAAAAAAAAAAAAgAAAgAAAAA=</HashCode>
+      <FileName>Entitades\ListaVerificacao.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CopiaVerificacao" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_revisoes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="RicardoTCC.LV.Dominio.Entitades.ItemVerificado" Collapsed="true">
+    <Position X="4" Y="3.75" Width="1.5" />
+    <AssociationLine Name="TopicoVerificacao" Type="RicardoTCC.LV.Dominio.ObjetosValor.Topico" FixedFromPoint="true">
+      <Path>
+        <Point X="4.75" Y="4.312" />
+        <Point X="4.75" Y="7.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.129" Y="0.749" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAIAQAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Entitades\ItemVerificado.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TopicoVerificacao" />
+      <Property Name="Verificador" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RicardoTCC.LV.Dominio.ObjetosValor.CheckList" Collapsed="true">
+    <Position X="0.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAYAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjetosValor\CheckList.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Topicos" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="RicardoTCC.LV.Dominio.ObjetosValor.Topico" Collapsed="true">
+    <Position X="4" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjetosValor\Topico.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RicardoTCC.LV.Dominio.ObjetosValor.IdentidadeDocumento" Collapsed="true">
+    <Position X="10.75" Y="7.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>ObjetosValor\IdentidadeDocumento.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Area" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RicardoTCC.LV.Dominio.ObjetosValor.TipoDocumento" Collapsed="true">
+    <Position X="2" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>ObjetosValor\TipoDocumento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RicardoTCC.LV.Dominio.ObjetosValor.OrdemServico" Collapsed="true">
+    <Position X="11" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAgAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>ObjetosValor\OrdemServico.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Projeto" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RicardoTCC.LV.Dominio.ObjetosValor.Projeto" Collapsed="true">
+    <Position X="11" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>ObjetosValor\Projeto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RicardoTCC.LV.Dominio.ObjetosValor.Area" Collapsed="true">
+    <Position X="11" Y="5.75" Width="1.5" />
+    <AssociationLine Name="AreaSuperior" Type="RicardoTCC.LV.Dominio.ObjetosValor.Area">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.17" Y="0.268" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAQAAAAAUAAAA=</HashCode>
+      <FileName>ObjetosValor\Area.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AreaSuperior" />
+      <Property Name="OrdemServico" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RicardoTCC.LV.Dominio.ObjetosValor.Disciplina" Collapsed="true">
+    <Position X="0.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAgAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>ObjetosValor\Disciplina.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Tabelas" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="RicardoTCC.LV.Dominio.ObjetosValor.CopiaVerificacao" Collapsed="true">
+    <Position X="7" Y="7.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="NumeroFornecedor" Type="RicardoTCC.LV.Dominio.ObjetosValor.IdentidadeDocumento">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.299" Y="-0.35" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAICAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjetosValor\CopiaVerificacao.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="NumeroFornecedor" />
+      <Property Name="NumeroCliente" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RicardoTCC.LV.Dominio.ObjetosValor.Verificador" Collapsed="true">
+    <Position X="4" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>ObjetosValor\Verificador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RicardoTCC.LV.Dominio.Entitades.Revisao" Collapsed="true">
+    <Position X="7" Y="3.75" Width="1.5" />
+    <AssociationLine Name="_itens" Type="RicardoTCC.LV.Dominio.Entitades.ItemVerificado" FixedFromPoint="true">
+      <Path>
+        <Point X="7" Y="4.063" />
+        <Point X="5.5" Y="4.063" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAIAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Entitades\Revisao.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_itens" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="RicardoTCC.LV.Dominio.ObjetosValor.ColunaTipicaRevisao" Collapsed="true">
+    <Position X="0.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjetosValor\ColunaTipicaRevisao.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="CheckLists" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="RicardoTCC.LV.Dominio.ObjetosValor.TabelaRevisao" Collapsed="true">
+    <Position X="0.75" Y="3.75" Width="1.5" />
+    <AssociationLine Name="ColunaTipica" Type="RicardoTCC.LV.Dominio.ObjetosValor.ColunaTipicaRevisao">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.129" Y="0.144" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAIAAAAAIAAAAAABAAAAAAAAAEAAAA=</HashCode>
+      <FileName>ObjetosValor\TabelaRevisao.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ColunaTipica" />
+      <Property Name="TipoDocumento" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="RicardoTCC.LV.Dominio.Servico.INumeracao" Collapsed="true">
+    <Position X="14.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Servico\INumeracao.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
