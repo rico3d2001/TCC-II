@@ -1,20 +1,42 @@
-﻿using RicardoTCC.LV.Dominio.Servico;
+﻿using Flunt.Validations;
+using RicardoTCC.LV.Dominio.Servico;
 
 namespace RicardoTCC.LV.Dominio.ObjetosValor
 {
-    public class IdentidadeDocumento
+    public class IdentidadeDocumento : ObjetoValor
     {
-        public IdentidadeDocumento(int sequencial, Area area)
+        INumeracao _numeracao;
+        Sequencial _sequencial;
+        Area _area;
+        TipoDocumento _tipoDocumento;
+        Disciplina _disciplina;
+        string _numeroDesenho;
+     
+
+
+        public IdentidadeDocumento(INumeracao numeracao, string sequencial,
+            TipoDocumento tipoDocumento, Area area, Disciplina disciplina)
         {
-            Sequencial = sequencial;
-            Area = area;
+            _numeracao = numeracao;
+            _tipoDocumento = tipoDocumento;
+            _sequencial = numeracao.Sequenciar(sequencial);
+            _area = area;
+            _disciplina = disciplina;
+
+            _numeroDesenho = _numeracao.Numerar(_tipoDocumento, _area, _disciplina, _sequencial);
+
+            AddNotifications(new Contract().Requires());
+
+            AddNotifications(_sequencial, _tipoDocumento, _area, _disciplina);
+
+          
         }
 
-        public int Sequencial { get; private set; }
+        //public int Sequencial { get; private set; }
 
-        public Area Area { get; private set; }
+        //public Area Area { get; private set; }
 
-
-
+        public string Numero { get => _numeroDesenho; }
+       
     }
 }

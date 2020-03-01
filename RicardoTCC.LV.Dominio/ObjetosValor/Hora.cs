@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace RicardoTCC.LV.Dominio.ObjetosValor
 {
-    public class Projeto : ObjetoValor
+    public class Hora : ObjetoValor
     {
-        public Projeto(string sigla)
+        public Hora()
         {
-            Sigla = sigla;
+            HoraAcao = DateTime.Now;
         }
 
-        public string Sigla { get; private set; }
-       
-
+        public DateTime HoraAcao { get; private set; }
     }
 }

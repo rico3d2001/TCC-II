@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Flunt.Notifications;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 namespace RicardoTCC.LV.Dominio.ObjetosValor.Enumerados
 {
    
-    public abstract class Enumeracao : IComparable
+    public abstract class Enumeracao : Notifiable, IComparable
     {
         public string Name { get; private set; }
 

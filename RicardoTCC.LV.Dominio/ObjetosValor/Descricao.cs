@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace RicardoTCC.LV.Dominio.ObjetosValor
 {
-    public class Projeto : ObjetoValor
+    public class Descricao
     {
-        public Projeto(string sigla)
+        public Descricao(string texto)
         {
-            Sigla = sigla;
+            Texto = texto;
         }
 
-        public string Sigla { get; private set; }
-       
-
+        public string Texto { get; private set; }
     }
 }

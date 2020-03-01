@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace RicardoTCC.LV.Dominio.ObjetosValor
 {
-    public class TipoDocumento
+    public class TipoDocumento : ObjetoValor
     {
         public TipoDocumento(string sigla, string nome)
         {
             Sigla = sigla;
-            Nome = nome;
+            Nome = new Nome(nome, "Tipo de Documento",5,50);
         }
 
         public string Sigla { get; private set; }
-        public string Nome { get; private set; }
+        public Nome Nome { get; private set; }
     }
 }

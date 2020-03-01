@@ -6,15 +6,23 @@ using System.Threading.Tasks;
 
 namespace RicardoTCC.LV.Dominio.ObjetosValor
 {
-    public class Topico
+    public class Topico : ObjetoValor
     {
-        public Topico(Ordenador ordenador, string descricao)
+        public Topico(IdTopico idTopico, Ordenador ordenador, string descricao)
         {
+            IdTopico = idTopico;
             Ordenador = ordenador;
-            Descricao = descricao;
+            Descricao = new Descricao(descricao);
         }
 
+        public IdTopico IdTopico { get; set; }
         public Ordenador Ordenador { get; private set; }
-        public string Descricao { get; private set; }
+        public Descricao Descricao { get; private set; }
+
+        public override bool Equals(object obj)
+        {
+            var t = obj as Topico;
+            return Descricao == t.Descricao ? true : false;
+        }
     }
 }

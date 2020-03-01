@@ -6,15 +6,21 @@ using System.Threading.Tasks;
 
 namespace RicardoTCC.LV.Dominio.ObjetosValor
 {
-    public class Verificador
+    public class Verificador : ObjetoValor
     {
-        public Verificador(string nome, Ordenador ordenador)
+        public Verificador(string nome, string sigla)
         {
-            Nome = nome;
-            Ordenador = ordenador;
+            Nome = new Nome(nome,"Nome do Verficador",5,100);
+            Sigla = new Sigla(sigla, "Nome do Verficador", 5);
         }
 
-        public string Nome { get; private set; }
-        public Ordenador Ordenador { get; private set; }
+        public Nome Nome { get; private set; }
+        public Sigla Sigla { get; private set; }
+
+        public override bool Equals(object verificador)
+        {
+            var v = verificador as Verificador;
+           return Sigla.Equals(v.Sigla) ? true : false;
+        }
     }
 }

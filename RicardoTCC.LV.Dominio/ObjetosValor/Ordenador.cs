@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace RicardoTCC.LV.Dominio.ObjetosValor
 {
-    public class Ordenador
+    public class Ordenador : ObjetoValor
     {
         public Ordenador(int numero)
         {
             Numero = numero;
+
         }
 
+        
 
         public int Numero { get; private set; }
     }

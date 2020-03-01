@@ -1,20 +1,21 @@
 ﻿using RicardoTCC.LV.Dominio.ObjetosValor;
 using RicardoTCC.LV.Dominio.Servico;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace RicardoTCC.LV.Dominio.Entitades
 {
-    public class ListaVerificacao
+    public class ListaVerificacao : Entidade
     {
 
-        List<Revisao> _revisoes;
-
-        CopiaVerificacao _copiaVerificacao;
+        IList<Revisao> _revisoes;
 
         public ListaVerificacao(CopiaVerificacao copiaVerificacao)
         {
-            _copiaVerificacao = copiaVerificacao;
+            CopiaVerificacao = copiaVerificacao;
             _revisoes = new List<Revisao>();
+
+            AddNotifications(copiaVerificacao);
         }
 
         public void AdiconarRevisao(Revisao revisao)
@@ -22,7 +23,9 @@ namespace RicardoTCC.LV.Dominio.Entitades
             _revisoes.Add(revisao);
         }
 
-       
-        public CopiaVerificacao CopiaVerificacao { get => _copiaVerificacao;private set => _copiaVerificacao = value; }
+        public CopiaVerificacao CopiaVerificacao { get; private set; }
+
+        public IReadOnlyCollection<Revisao> Itens { get { return _revisoes.ToList(); } }
+
     }
 }

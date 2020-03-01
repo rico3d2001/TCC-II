@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Flunt, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Flunt.1.0.4\lib\netstandard2.0\Flunt.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,24 +44,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entitades\Entidade.cs" />
     <Compile Include="Entitades\Revisao.cs" />
     <Compile Include="ObjetosValor\CheckList.cs" />
-    <Compile Include="Entitades\ItemVerificado.cs" />
+    <Compile Include="Entitades\ItemVerificacao.cs" />
     <Compile Include="Entitades\ListaVerificacao.cs" />
+    <Compile Include="ObjetosValor\Descricao.cs" />
     <Compile Include="ObjetosValor\Enumerados\Enumeracao.cs" />
     <Compile Include="ObjetosValor\Enumerados\Status.cs" />
+    <Compile Include="ObjetosValor\Hora.cs" />
+    <Compile Include="ObjetosValor\IdTopico.cs" />
     <Compile Include="ObjetosValor\IndiceRevisao.cs" />
+    <Compile Include="ObjetosValor\Nome.cs" />
+    <Compile Include="ObjetosValor\ObjetoValor.cs" />
     <Compile Include="ObjetosValor\Ordenador.cs" />
     <Compile Include="ObjetosValor\ColunaTipicaRevisao.cs" />
+    <Compile Include="ObjetosValor\Sequencial.cs" />
+    <Compile Include="ObjetosValor\Sigla.cs" />
     <Compile Include="ObjetosValor\TabelaRevisao.cs" />
     <Compile Include="ObjetosValor\Topico.cs" />
     <Compile Include="ObjetosValor\Area.cs" />
-    <Compile Include="ObjetosValor\CopiaVerificacao.cs" />
+    <Compile Include="Entitades\CopiaVerificacao.cs" />
     <Compile Include="ObjetosValor\Disciplina.cs" />
     <Compile Include="ObjetosValor\OrdemServico.cs" />
     <Compile Include="ObjetosValor\Projeto.cs" />
     <Compile Include="ObjetosValor\TipoDocumento.cs" />
     <Compile Include="ObjetosValor\Verificador.cs" />
+    <Compile Include="ObjetosValor\Versao.cs" />
     <Compile Include="Servico\INumeracao.cs" />
     <Compile Include="ObjetosValor\IdentidadeDocumento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Diagrama\ClassDiagram1.cd" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

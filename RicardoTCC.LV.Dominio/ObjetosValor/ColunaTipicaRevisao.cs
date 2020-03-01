@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RicardoTCC.LV.Dominio.ObjetosValor
 {
-    public class ColunaTipicaRevisao
+    public class ColunaTipicaRevisao : ObjetoValor
     {
         public ColunaTipicaRevisao(List<CheckList> checkLists)
         {

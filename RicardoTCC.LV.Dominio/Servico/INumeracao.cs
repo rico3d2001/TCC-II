@@ -9,6 +9,8 @@ namespace RicardoTCC.LV.Dominio.Servico
 {
     public interface INumeracao
     {
-        IdentidadeDocumento Numerar();
+        Sequencial Sequenciar(string sequencial); 
+        string Numerar(TipoDocumento tipo, Area area, Disciplina disciplina, Sequencial sequencial);
+
     }
 }

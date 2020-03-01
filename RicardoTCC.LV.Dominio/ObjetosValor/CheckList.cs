@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace RicardoTCC.LV.Dominio.ObjetosValor
 {
-    public class CheckList
+    public class CheckList : ObjetoValor
     {
-        public CheckList(Ordenador ordenador, string descricao, List<Topico> topicos)
+        public CheckList(Ordenador ordenador, Descricao descricao, List<Topico> topicos)
         {
             Ordenador = ordenador;
             Descricao = descricao;
@@ -16,7 +16,7 @@ namespace RicardoTCC.LV.Dominio.ObjetosValor
         }
 
         public Ordenador Ordenador { get; private set; }
-        public string Descricao { get; private set; }
+        public Descricao Descricao { get; private set; }
         public List<Topico> Topicos { get; private set; }
     }
 }
