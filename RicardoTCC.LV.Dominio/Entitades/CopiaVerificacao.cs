@@ -1,22 +1,19 @@
 ﻿using RicardoTCC.LV.Dominio.ObjetosValor;
-using RicardoTCC.LV.Dominio.Servico;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RicardoTCC.LV.Dominio.Entitades
 {
     public class CopiaVerificacao : Entidade
     {
-        public CopiaVerificacao(string numeroFornecedor, string numeroCliente)
+        IdentidadeDocumento _numeroFornecedor;
+        IdentidadeDocumento _numeroCliente;
+
+        public CopiaVerificacao(IdentidadeDocumento numeroFornecedor, IdentidadeDocumento numeroCliente)
         {
-            NumeroFornecedor = numeroFornecedor;
-            NumeroCliente = numeroCliente;
+            _numeroFornecedor = numeroFornecedor;
+            _numeroCliente = numeroCliente;
         }
 
-        public string NumeroFornecedor { get; set; }
-        public string NumeroCliente { get; set; }
+        public string NumeroFornecedor { get => _numeroFornecedor.Numero; }
+        public string NumeroCliente { get => _numeroCliente.Numero; }
     }
 }

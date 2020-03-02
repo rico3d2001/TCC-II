@@ -34,7 +34,7 @@ namespace RicardoTCC.LV.Dominio.Entitades
 
         public override string ToString()
         {
-            return IdTopico.Id + ": " + Status.Name;
+            return IdTopico.GUID + ": " + Status.Name;
         }
 
     }

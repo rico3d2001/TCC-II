@@ -1,5 +1,5 @@
 ﻿using Flunt.Validations;
-using RicardoTCC.LV.Dominio.Servico;
+using RicardoTCC.LV.Dominio.Numeracao;
 
 namespace RicardoTCC.LV.Dominio.ObjetosValor
 {
@@ -7,11 +7,10 @@ namespace RicardoTCC.LV.Dominio.ObjetosValor
     {
         INumeracao _numeracao;
         Sequencial _sequencial;
-        Area _area;
         TipoDocumento _tipoDocumento;
         Disciplina _disciplina;
-        string _numeroDesenho;
-     
+        string _numeroDocumento;
+        Area _area;
 
 
         public IdentidadeDocumento(INumeracao numeracao, string sequencial,
@@ -23,7 +22,7 @@ namespace RicardoTCC.LV.Dominio.ObjetosValor
             _area = area;
             _disciplina = disciplina;
 
-            _numeroDesenho = _numeracao.Numerar(_tipoDocumento, _area, _disciplina, _sequencial);
+            _numeroDocumento = _numeracao.Numerar(_tipoDocumento, _area, _disciplina, _sequencial);
 
             AddNotifications(new Contract().Requires());
 
@@ -32,11 +31,10 @@ namespace RicardoTCC.LV.Dominio.ObjetosValor
           
         }
 
+        public string Numero { get => _numeroDocumento; }
         //public int Sequencial { get; private set; }
 
         //public Area Area { get; private set; }
 
-        public string Numero { get => _numeroDesenho; }
-       
     }
 }

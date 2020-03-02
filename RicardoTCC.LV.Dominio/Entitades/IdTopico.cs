@@ -5,21 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RicardoTCC.LV.Dominio.ObjetosValor
+namespace RicardoTCC.LV.Dominio.Entitades
 {
-    public class IdTopico:ObjetoValor
+    public class IdTopico:Entidade
     {
-        public IdTopico(string id)
-        {
-            Id = id;
-        }
-
-        public string Id { get; private set; }
-
+        
         public override bool Equals(object obj)
         {
             var i = obj as IdTopico;
-            return i.Id == Id ? true : false;
+            return i.GUID == GUID ? true : false;
         }
     }
 }

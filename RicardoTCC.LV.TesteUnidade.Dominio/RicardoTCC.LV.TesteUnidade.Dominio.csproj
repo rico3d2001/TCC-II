@@ -52,6 +52,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HandlerTestes.cs" />
+    <Compile Include="Mock\FakeEmailsService.cs" />
+    <Compile Include="Mock\FakeRevisaoRepo.cs" />
     <Compile Include="TemplateTestes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,9 +62,21 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RicardoTCC.LV.Command.Relacional\RicardoTCC.LV.Command.Relacional.csproj">
+      <Project>{6edc6891-5a61-4892-968f-b07cb4481c3d}</Project>
+      <Name>RicardoTCC.LV.Command.Relacional</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RicardoTCC.LV.Dominio\RicardoTCC.LV.Dominio.csproj">
       <Project>{60FD480F-95B1-425B-9515-2B0224028BCE}</Project>
       <Name>RicardoTCC.LV.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RicardoTCC.LV.ServicoEmails\RicardoTCC.LV.ServicoEmails.csproj">
+      <Project>{40bb07ff-0000-4f7b-bba2-91e163f21ff2}</Project>
+      <Name>RicardoTCC.LV.ServicoEmails</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RicardoTCC.LV.Shared\RicardoTCC.LV.Shared.csproj">
+      <Project>{75E09218-6372-4100-BC7B-B0C3F8AF3982}</Project>
+      <Name>RicardoTCC.LV.Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

@@ -3,11 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00-Dominio", "00-Dominio", "{8F5ED00C-BD8E-4F5E-8E68-8F6AA0FDAF24}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Dominio", "02-Dominio", "{8F5ED00C-BD8E-4F5E-8E68-8F6AA0FDAF24}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RicardoTCC.LV.Dominio", "RicardoTCC.LV.Dominio\RicardoTCC.LV.Dominio.csproj", "{60FD480F-95B1-425B-9515-2B0224028BCE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RicardoTCC.LV.TesteUnidade.Dominio", "RicardoTCC.LV.TesteUnidade.Dominio\RicardoTCC.LV.TesteUnidade.Dominio.csproj", "{AEE04680-FB8F-46AB-9F24-EC578759FD5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RicardoTCC.LV.Shared", "RicardoTCC.LV.Shared\RicardoTCC.LV.Shared.csproj", "{75E09218-6372-4100-BC7B-B0C3F8AF3982}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00-Repositorios", "00-Repositorios", "{9FCD9186-48A2-4251-97AD-F6A5257D9DE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RicardoTCC.LV.Command.Relacional", "RicardoTCC.LV.Command.Relacional\RicardoTCC.LV.Command.Relacional.csproj", "{6EDC6891-5A61-4892-968F-B07CB4481C3D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Emails", "01-Emails", "{B0B705C0-4D94-4CFC-B783-5EC825DC10A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RicardoTCC.LV.ServicoEmails", "RicardoTCC.LV.ServicoEmails\RicardoTCC.LV.ServicoEmails.csproj", "{40BB07FF-0000-4F7B-BBA2-91E163F21FF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +33,18 @@ Global
 		{AEE04680-FB8F-46AB-9F24-EC578759FD5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEE04680-FB8F-46AB-9F24-EC578759FD5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEE04680-FB8F-46AB-9F24-EC578759FD5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75E09218-6372-4100-BC7B-B0C3F8AF3982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75E09218-6372-4100-BC7B-B0C3F8AF3982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75E09218-6372-4100-BC7B-B0C3F8AF3982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75E09218-6372-4100-BC7B-B0C3F8AF3982}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EDC6891-5A61-4892-968F-B07CB4481C3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EDC6891-5A61-4892-968F-B07CB4481C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EDC6891-5A61-4892-968F-B07CB4481C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EDC6891-5A61-4892-968F-B07CB4481C3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40BB07FF-0000-4F7B-BBA2-91E163F21FF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40BB07FF-0000-4F7B-BBA2-91E163F21FF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40BB07FF-0000-4F7B-BBA2-91E163F21FF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40BB07FF-0000-4F7B-BBA2-91E163F21FF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +52,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{60FD480F-95B1-425B-9515-2B0224028BCE} = {8F5ED00C-BD8E-4F5E-8E68-8F6AA0FDAF24}
 		{AEE04680-FB8F-46AB-9F24-EC578759FD5F} = {8F5ED00C-BD8E-4F5E-8E68-8F6AA0FDAF24}
+		{75E09218-6372-4100-BC7B-B0C3F8AF3982} = {8F5ED00C-BD8E-4F5E-8E68-8F6AA0FDAF24}
+		{6EDC6891-5A61-4892-968F-B07CB4481C3D} = {9FCD9186-48A2-4251-97AD-F6A5257D9DE3}
+		{40BB07FF-0000-4F7B-BBA2-91E163F21FF2} = {B0B705C0-4D94-4CFC-B783-5EC825DC10A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5273C744-50CE-4DFA-B969-0A458AC0F4A9}

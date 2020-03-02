@@ -1,6 +1,4 @@
-﻿using RicardoTCC.LV.Dominio.ObjetosValor;
-using RicardoTCC.LV.Dominio.Servico;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace RicardoTCC.LV.Dominio.Entitades

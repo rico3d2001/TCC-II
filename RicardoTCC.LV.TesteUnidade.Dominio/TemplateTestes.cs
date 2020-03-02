@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RicardoTCC.LV.Dominio.Entitades;
+using RicardoTCC.LV.Dominio.Numeracao;
 using RicardoTCC.LV.Dominio.ObjetosValor;
 using RicardoTCC.LV.Dominio.ObjetosValor.Enumerados;
-using RicardoTCC.LV.Dominio.Servico;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace RicardoTCC.LV.TesteUnidade.Dominio
 {
@@ -18,22 +17,22 @@ namespace RicardoTCC.LV.TesteUnidade.Dominio
             //MontaOpçãoEscolha
             List<Topico> topicosCheckList1 = new List<Topico>
             {
-                new Topico(new IdTopico(Guid.NewGuid().ToString()),
+                new Topico(new IdTopico(),
                 new Ordenador(1),"Formato no padrao do projeto"),
 
-                 new Topico(new IdTopico(Guid.NewGuid().ToString()),
+                 new Topico(new IdTopico(),
                  new Ordenador(2),"Layers do formato adequado"),
 
-                 new Topico(new IdTopico(Guid.NewGuid().ToString()),
+                 new Topico(new IdTopico(),
                  new Ordenador(3),"Escala do formato adequada")
             };
 
             List<Topico> topicosCheckList2 = new List<Topico>
             {
-                 new Topico(new IdTopico(Guid.NewGuid().ToString()),
+                 new Topico(new IdTopico(),
                  new Ordenador(1),"Título na legenda adequado"),
 
-                 new Topico(new IdTopico(Guid.NewGuid().ToString()),
+                 new Topico(new IdTopico(),
                  new Ordenador(2), "Numero na legenda adequado")
             };
 
@@ -68,7 +67,7 @@ namespace RicardoTCC.LV.TesteUnidade.Dominio
 
             //Execução
             ItemVerificacao itemVerificar = new ItemVerificacao(topicoVerificado.IdTopico,
-                new Verificador("Ricardo", "RRP55"), Status.X);
+                new Verificador("Ricardo", "RRP55","rico3d@live.com"), Status.X);
 
 
 
@@ -76,11 +75,11 @@ namespace RicardoTCC.LV.TesteUnidade.Dominio
 
             //Verificação
 
-            Assert.AreEqual(itemVerificar.ToString(), $"{topicoVerificado.IdTopico.Id}: Errado");
+            Assert.AreEqual(itemVerificar.ToString(), $"{topicoVerificado.IdTopico.GUID}: Errado");
 
             itemVerificar.ModificaStatusVerificacao(Status.V);
 
-            Assert.AreEqual(itemVerificar.ToString(), $"{topicoVerificado.IdTopico.Id}: Verificado");
+            Assert.AreEqual(itemVerificar.ToString(), $"{topicoVerificado.IdTopico.GUID}: Verificado");
 
         }
 
@@ -101,20 +100,15 @@ namespace RicardoTCC.LV.TesteUnidade.Dominio
                     new Area("001", null, new OrdemServico("002", new Projeto("9999"))),
                     new Disciplina("Mecânica", "MEC"));
 
-            string numForn = numeroFornecedor.Numero;
-            string numCli = numeroCliente.Numero;
-
-            CopiaVerificacao copiaVerificacao = new CopiaVerificacao(numForn, numCli);
-
-            
 
             Assert.IsTrue(numeroFornecedor.Valid);
             Assert.IsTrue(numeroCliente.Valid);
 
 
+            CopiaVerificacao copiaVerificacao = new CopiaVerificacao(numeroFornecedor, numeroCliente);
 
-            Assert.AreEqual("9999-002-001-D04MEC-1000", numForn);
-            Assert.AreEqual("CLI-9999-002-001-D04MEC-1000", numCli);
+            Assert.AreEqual("9999-002-001-D04MEC-1000", numeroFornecedor.Numero);
+            Assert.AreEqual("CLI-9999-002-001-D04MEC-1000", numeroCliente.Numero);
 
         }
 
@@ -135,14 +129,10 @@ namespace RicardoTCC.LV.TesteUnidade.Dominio
                     new Area("001", null, new OrdemServico("002", new Projeto("9999"))),
                     new Disciplina("Mecânica", "MEC"));
 
-            string numForn = numeroFornecedor.Numero;
-            string numCli = numeroCliente.Numero;
-
-            CopiaVerificacao copiaVerificacao = new CopiaVerificacao(numForn, numCli);
-
-
             Assert.IsFalse(numeroFornecedor.Valid);
             Assert.IsFalse(numeroCliente.Valid);
+
+            CopiaVerificacao copiaVerificacao = new CopiaVerificacao(numeroFornecedor, numeroCliente);
 
             //"Sequencial de Numero do documento"
             //"Deve ter no mínimo 4 digitos"
@@ -158,8 +148,8 @@ namespace RicardoTCC.LV.TesteUnidade.Dominio
 
 
 
-            Assert.AreEqual("9999-002-001-D04MEC-10005", numForn);
-            Assert.AreEqual("CLI-9999-002-001-D04MEC-10006", numCli);
+            Assert.AreEqual("9999-002-001-D04MEC-10005", numeroFornecedor.Numero);
+            Assert.AreEqual("CLI-9999-002-001-D04MEC-10006", numeroCliente.Numero);
 
         }
 
@@ -167,25 +157,26 @@ namespace RicardoTCC.LV.TesteUnidade.Dominio
         [TestMethod]
         public void InsercaoItemVerificacao_Erro()
         {
-            Revisao revisao = new Revisao(new Ordenador(1), new IndiceRevisao("0"));
+            Revisao revisao = new Revisao(new Verificador("Ricardo", "RRP55", "rico3d@live.com"),
+                new Verificador("João", "JDD35", "joao@live.com"),new IndiceRevisao("0"));
 
             revisao.AdicionarItem(
-                new ItemVerificacao(new IdTopico("A123"), new Verificador("Ricardo", "RRP55"), Status.X));
+                new ItemVerificacao(new IdTopico(), new Verificador("Ricardo", "RRP55","rico3d@live.com"), Status.X));
 
             revisao.AdicionarItem(
-                new ItemVerificacao(new IdTopico("A124"), new Verificador("Ricardo", "RRP55"), Status.X));
+                new ItemVerificacao(new IdTopico(), new Verificador("Ricardo", "RRP55", "rico3d@live.com"), Status.X));
 
             revisao.AdicionarItem(
-                new ItemVerificacao(new IdTopico("A125"), new Verificador("João", "JDD35"), Status.X));
+                new ItemVerificacao(new IdTopico(), new Verificador("João", "JDD35", "joao@live.com"), Status.X));
 
             revisao.AdicionarItem(
-                new ItemVerificacao(new IdTopico("A126"), new Verificador("João", "JDD35"), Status.X));
+                new ItemVerificacao(new IdTopico(), new Verificador("João", "JDD35", "joao@live.com"), Status.X));
 
             //Erro aqui pois não pode mais inserir revisao
             revisao.AdicionarItem(
-                new ItemVerificacao(new IdTopico("A127"), new Verificador("Ricardo", "RRP55"), Status.X));
+                new ItemVerificacao(new IdTopico(), new Verificador("Ricardo", "RRP55", "rico3d@live.com"), Status.X));
 
-            var testedebug = revisao.Notifications;
+          
 
             var msg = revisao.Notifications.First().Property
                      + " - " + revisao.Notifications.First().Message;

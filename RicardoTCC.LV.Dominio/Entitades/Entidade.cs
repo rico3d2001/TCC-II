@@ -8,9 +8,9 @@ namespace RicardoTCC.LV.Dominio.Entitades
         
         public Entidade()
         {
-            Id = Guid.NewGuid();
+            GUID = Guid.NewGuid().ToString();
         }
 
-        public Guid Id { get; set; }
+        public string GUID { get; set; }
     }
 }

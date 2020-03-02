@@ -9,25 +9,30 @@ namespace RicardoTCC.LV.Dominio.Entitades
     public class Revisao : Entidade
     {
         
-        IList<ItemVerificacao> _itens;
-        public Revisao(Ordenador ordenador, IndiceRevisao indice)
+        List<ItemVerificacao> _itens;
+
+        public Revisao(Verificador primeiroVericador, Verificador segundoVericador, IndiceRevisao indice)
         {
-            Ordenador = ordenador;
+            PrimeiroVericador = primeiroVericador;
+            SegundoVericador = segundoVericador;
             Indice = indice;
             _itens = new List<ItemVerificacao>();
-
-            AddNotifications(indice);
-
         }
 
-        public Ordenador Ordenador { get; private set; }
+
+        //public Revisao(rdenador ordenador, IndiceRevisao indice)
+        //{
+        //    _verificadores = verificadores;
+        //    Ordenador = ordenador;
+        //    Indice = indice;
+        //}
+
+
+        public Verificador PrimeiroVericador { get; set; }
+        public Verificador SegundoVericador { get; set; }
         public IndiceRevisao Indice { get; private set; }
 
         public IReadOnlyCollection<ItemVerificacao> Itens { get { return _itens.ToList(); } }
-
-
-        
-
 
         public void AdicionarItem(ItemVerificacao item)
         {
@@ -84,11 +89,11 @@ namespace RicardoTCC.LV.Dominio.Entitades
 
         }
 
-        private bool naoEstaNaLista(ItemVerificacao item)
-        {
-            var teste = _itens.FirstOrDefault(x => x.Verificador.Equals(item.Verificador));
-            return _itens.FirstOrDefault(x => x.Verificador.Equals(item.Verificador)) == null;
-        }
+        //private bool naoEstaNaLista(ItemVerificacao item)
+        //{
+        //    var teste = _itens.FirstOrDefault(x => x.Verificador.Equals(item.Verificador));
+        //    return _itens.FirstOrDefault(x => x.Verificador.Equals(item.Verificador)) == null;
+        //}
 
         #endregion
     }

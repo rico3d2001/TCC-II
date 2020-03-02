@@ -44,21 +44,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\CriaLinhaRevisaoComando.cs" />
+    <Compile Include="Commands\CriaRevisaoComando.cs" />
+    <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Entitades\Entidade.cs" />
     <Compile Include="Entitades\Revisao.cs" />
     <Compile Include="ObjetosValor\CheckList.cs" />
     <Compile Include="Entitades\ItemVerificacao.cs" />
     <Compile Include="Entitades\ListaVerificacao.cs" />
     <Compile Include="ObjetosValor\Descricao.cs" />
+    <Compile Include="ObjetosValor\Email.cs" />
     <Compile Include="ObjetosValor\Enumerados\Enumeracao.cs" />
     <Compile Include="ObjetosValor\Enumerados\Status.cs" />
     <Compile Include="ObjetosValor\Hora.cs" />
-    <Compile Include="ObjetosValor\IdTopico.cs" />
+    <Compile Include="Entitades\IdTopico.cs" />
     <Compile Include="ObjetosValor\IndiceRevisao.cs" />
+    <Compile Include="ObjetosValor\Login.cs" />
     <Compile Include="ObjetosValor\Nome.cs" />
     <Compile Include="ObjetosValor\ObjetoValor.cs" />
     <Compile Include="ObjetosValor\Ordenador.cs" />
     <Compile Include="ObjetosValor\ColunaTipicaRevisao.cs" />
+    <Compile Include="ObjetosValor\Senha.cs" />
     <Compile Include="ObjetosValor\Sequencial.cs" />
     <Compile Include="ObjetosValor\Sigla.cs" />
     <Compile Include="ObjetosValor\TabelaRevisao.cs" />
@@ -69,17 +75,19 @@
     <Compile Include="ObjetosValor\OrdemServico.cs" />
     <Compile Include="ObjetosValor\Projeto.cs" />
     <Compile Include="ObjetosValor\TipoDocumento.cs" />
+    <Compile Include="Entitades\Usuario.cs" />
     <Compile Include="ObjetosValor\Verificador.cs" />
     <Compile Include="ObjetosValor\Versao.cs" />
-    <Compile Include="Servico\INumeracao.cs" />
+    <Compile Include="Numeracao\INumeracao.cs" />
     <Compile Include="ObjetosValor\IdentidadeDocumento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Servico\NumeracaoFornecedor.cs" />
-    <Compile Include="Servico\PlantaANumeracao.cs" />
+    <Compile Include="Numeracao\NumeracaoFornecedor.cs" />
+    <Compile Include="Numeracao\PlantaANumeracao.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Diagrama\ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
